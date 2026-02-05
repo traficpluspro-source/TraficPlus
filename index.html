@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trafic Plus – Boostez votre visibilité sur Google</title>
+
+<meta name="description" content="Trafic Plus aide les artisans et commerces à gagner plus de clients grâce à Google Business et Google Maps en Île-de-France. Diagnostic gratuit.">
+
+
+<style>
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #b4b3b9;
+    color: #333;
+}
+
+header {
+    background: #605775;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+}
+
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    cursor:pointer;
+    transition:0.3s;
+    position:relative;
+}
+
+.box:hover {
+    transform: translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Boostez votre visibilité Google avec Trafic Plus</h1>
+
+<p>Boostez votre visibilité sur Google et obtenez plus de clients</p>
+<a href="#contact" class="btn">Me contacter</a>
+</header>
+
+<section>
+<h2>Ce que je fais</h2>
+<p>J’aide les commerces d’Île-de-France à apparaître sur Google Maps, recevoir plus d’appels et attirer plus de clients.</p>
+</section>
+
+<section class="services">
+    
+
+        <div class="box" onclick="openModal('google')">
+        <h3>Google Business</h3>
+        <p>Création & optimisation</p>
+        </div>
+        
+        <div class="box" onclick="openModal('maps')">
+        <h3>Google Maps</h3>
+        <p>Visibilité locale</p>
+        </div>
+        
+        <div class="box" onclick="openModal('site')">
+        <h3>Mini Site</h3>
+        <p>Site vitrine</p>
+        </div>
+        
+        <div class="box" onclick="openModal('avis')">
+        <h3>Avis Clients</h3>
+        <p>Réputation</p>
+        </div>
+        
+        
+        
+    </section>
+
+    <section>
+        <h2>Pourquoi Trafic Plus ?</h2>
+        
+        <ul>
+        <li>🚀 Plus de visibilité sur Google et Google Maps</li>
+        <li>📞 Plus d’appels clients sans publicité coûteuse</li>
+        <li>🧭 Spécialiste du référencement local</li>
+        <li>⚡ Mise en place rapide et résultats concrets</li>
+        <li>🤝 Accompagnement personnalisé</li>
+        <li>💰 Solution simple et accessible aux petites entreprises</li>
+        </ul>
+        
+        <p>
+        Chez Trafic Plus, notre objectif est clair : aider les professionnels à attirer plus de clients grâce à Google.
+        Pas de promesses irréalistes — uniquement des actions concrètes pour améliorer votre présence en ligne et développer votre activité.
+        </p>
+        
+        </section>
+
+        <section style="text-align:center;">
+            <h2>Demandez votre diagnostic gratuit</h2>
+            <p>Analyse rapide de votre visibilité Google — sans engagement.</p>
+            <a href="#contact" class="btn">Obtenir mon diagnostic</a>
+            </section>
+            
+        
+            <section class="services">
+
+                <div class="box">
+                <h2 id="count1">0</h2>
+                <p>Entreprises aidées</p>
+                </div>
+                
+                <div class="box">
+                <h2 id="count2">0</h2>
+                <p>Appels générés</p>
+                </div>
+                
+                <div class="box">
+                <h2 id="count3">0</h2>
+                <p>% de clients satisfaits</p>
+                </div>
+                
+                </section>
+                
+
+<section id="contact">
+<h2>Contact</h2>
+<p>📞 Téléphone : 0752758690</p>
+<p>📧 Email : Contact@traficplus.fr</p>
+<p>📍 Zone : Île-de-France</p>
+</section>
+
+
+
+<div id="modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);align-items:center;justify-content:center;">
+
+    <div style="background:white;padding:30px;border-radius:8px;max-width:500px;width:90%;">
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+    <br>
+    <button onclick="closeModal()" class="btn">Fermer</button>
+    </div>
+    
+    </div>
+    
+    <script>
+        function openModal(service){
+        
+        let title="";
+        let text="";
+        
+        if(service=="google"){
+        title="Google Business";
+        text="Création complète de votre fiche Google Business, optimisation des informations, photos, description et mise en place pour apparaître sur Google.";
+        }
+        
+        if(service=="maps"){
+        title="Google Maps";
+        text="Optimisation de votre positionnement local pour apparaître plus haut dans Google Maps.";
+        }
+        
+        if(service=="site"){
+        title="Mini Site";
+        text="Création d’un site vitrine professionnel pour présenter vos services et générer des appels.";
+        }
+        
+        if(service=="avis"){
+        title="Avis Clients";
+        text="Mise en place d’un système simple pour récolter plus d’avis positifs et renforcer votre crédibilité.";
+        }
+        
+        document.getElementById("modalTitle").innerHTML=title;
+        document.getElementById("modalText").innerHTML=text;
+        document.getElementById("modal").style.display="flex";
+        }
+        
+        function closeModal(){
+        document.getElementById("modal").style.display="none";
+        }
+
+        let c1=0,c2=0,c3=0;
+
+setInterval(()=>{
+if(c1<25){c1++;document.getElementById("count1").innerHTML=c1;}
+if(c2<180){c2+=3;document.getElementById("count2").innerHTML=c2;}
+if(c3<100){c3++;document.getElementById("count3").innerHTML=c3;}
+},50);
+
+        </script>
+        
+
+        <footer>
+            <p>© 2026 Trafic Plus</p>
+        </footer>
+
+</body>
+</html>
