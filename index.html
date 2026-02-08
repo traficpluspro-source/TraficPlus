@@ -7,7 +7,7 @@
 <meta name="description" content="Trafic Plus aide les artisans et commerces à gagner plus de clients grâce à Google Business et Google Maps en Île-de-France. Diagnostic gratuit.">
 
 <style>
-/* ===== Body & Base ===== */
+/* ===== Base ===== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -20,7 +20,6 @@ header {
     color: white;
     padding: 80px 20px;
     text-align: center;
-    position: relative;
 }
 
 header h1, header p, header .btn, header .subtext {
@@ -41,6 +40,7 @@ header h1 { font-size: 42px; margin:0; }
 header p { font-size: 20px; margin-top:10px; }
 header .subtext { font-size:18px; margin-top:15px; color:#fffccf; }
 
+/* ===== Boutons ===== */
 .btn {
     display: inline-block;
     margin-top: 25px;
@@ -51,17 +51,9 @@ header .subtext { font-size:18px; margin-top:15px; color:#fffccf; }
     border-radius: 50px;
     font-weight: bold;
     transition: all 0.3s ease;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-  40% {transform: translateY(-8px);}
-  60% {transform: translateY(-4px);}
 }
 
 .btn:hover {
-    background: linear-gradient(135deg, #6a5acd, #ff6600);
     transform: translateY(-3px);
     box-shadow: 0 0 15px rgba(255,255,255,0.5);
 }
@@ -95,67 +87,21 @@ h2 { color: #ff6600; text-align: center; margin-bottom:20px; }
     border-radius: 12px;
     border: 2px solid #ff6600;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    cursor: pointer;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
+    transition: all 0.4s ease;
 }
 
-.box.visible { opacity:1; transform: translateY(0);}
-.box h3 { color: #6a5acd; margin-top: 10px; }
+.box.visible { opacity:1; transform: translateY(0); }
+
+.box h3 { color: #6a5acd; }
 .box p { color: #666; }
 
 .box img {
-    display: block;
     max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    pointer-events: none;
-    border: 2px solid #ff6600;
-    transition: all 0.3s ease;
-}
-
-.box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    border-color: #6a5acd;
-}
-
-.box img:hover {
-    border-color:#6a5acd;
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* ===== Stats ===== */
-.stats .box h2 { font-size:36px; color:#ff6600; margin-bottom:10px; }
-
-/* ===== Formulaire ===== */
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px 0;
     border-radius: 8px;
     border: 2px solid #ff6600;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-}
-
-form input:hover, form textarea:hover,
-form input:focus, form textarea:focus {
-    border-color:#6a5acd;
-    box-shadow:0 0 10px rgba(106,90,205,0.3);
-    outline:none;
-}
-
-form button {
-    width: 100%;
-    background: linear-gradient(135deg, #6a5acd, #ff6600);
-    color: white;
-    font-weight: bold;
-    border-radius:8px;
 }
 
 /* ===== Témoignages ===== */
@@ -163,26 +109,47 @@ form button {
     background: #f0f4ff;
     padding: 40px 20px;
     border-radius: 12px;
-    max-width: 1000px;
-    margin:auto;
-}
-.testimonials .box {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* ===== Modal ===== */
-#modal {
-    display: none;
-    position: fixed; top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.6);
-    align-items: center; justify-content: center;
-    transition: opacity 0.3s ease;
+/* ===== Stats ===== */
+.stats .box h2 {
+    font-size:36px;
+    color:#ff6600;
 }
-#modal.show { display:flex; opacity:1; }
 
-#modalContent {
-    background:white; padding:30px; border-radius:8px; max-width:500px; width:90%; text-align:center;
+/* ===== Formulaire ===== */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 2px solid #ff6600;
+}
+
+form input:focus, form textarea:focus {
+    border-color:#6a5acd;
+    outline:none;
+}
+
+/* ===== Bouton téléphone flottant (mobile uniquement) ===== */
+.call-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff6600;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+@media (min-width: 768px) {
+    .call-fixed {
+        display: none;
+    }
 }
 
 /* ===== Footer ===== */
@@ -192,194 +159,75 @@ footer {
     text-align: center;
     padding: 30px;
 }
-footer a { color:white; text-decoration:underline; }
 
-/* ===== Responsive ===== */
-@media (max-width:768px){
-    header h1 { font-size:32px; }
-    header p, header .subtext { font-size:16px; }
-    .services { grid-template-columns:1fr; gap:15px; }
-}
+footer a { color:white; }
 </style>
 </head>
 
 <body>
+
 <header>
     <h1>Boostez votre visibilité Google avec Trafic Plus</h1>
-    <p>Attirez plus de clients grâce à une présence optimisée sur Google et Google Maps</p>
-    <p class="subtext">Obtenez plus de clients sans publicité coûteuse — Trafic Plus s’occupe de votre visibilité Google.</p>
+    <p>Attirez plus de clients grâce à Google Business & Google Maps</p>
+    <p class="subtext">Spécialiste référencement local – Île-de-France</p>
     <a href="#contact" class="btn">Me contacter</a>
-    <a href="tel:+33752758690" class="btn" style="display:block;max-width:300px;margin:15px auto;">
-  📞 Appeler maintenant
-</a>
-
+    <br>
+    <a href="tel:+33752758690" class="btn" style="margin-top:15px;">📞 Appeler maintenant</a>
 </header>
 
 <section>
     <h2>Ce que je fais</h2>
-    <p style="max-width:800px;margin:auto;line-height:1.6;text-align:center;">
-        J’aide les commerces et artisans d’Île-de-France à être visibles là où leurs clients les cherchent : Google Business et Google Maps.
-        Mon objectif : augmenter vos appels, générer plus de visites et transformer vos prospects en clients satisfaits. 
-        Avec un accompagnement personnalisé et des actions concrètes, je vous aide à booster votre activité rapidement et efficacement.
+    <p style="max-width:800px;margin:auto;text-align:center;line-height:1.6;">
+        J’aide les artisans et commerces à apparaître là où leurs clients cherchent : sur Google.
+        Objectif : plus d’appels, plus de visites, plus de clients.
     </p>
 </section>
 
 <section class="services">
-    <div class="box"><img src="images/mini-site.jpg" alt="Mini Site"><h3>Mini Site 🌐</h3><p>Création d’un site vitrine professionnel</p></div>
-    <div class="box"><img src="images/google-business.jpg" alt="Google Business"><h3>Google Business 🚀</h3><p>Création et optimisation complète de votre fiche</p></div>
-    <div class="box"><img src="images/google-maps.jpg" alt="Google Maps"><h3>Google Maps 📍</h3><p>Amélioration de votre visibilité locale</p></div>
-    <div class="box"><img src="images/avis-clients.jpg" alt="Avis Clients"><h3>Avis Clients ⭐</h3><p>Collecte et gestion des avis pour renforcer votre réputation</p></div>
+    <div class="box"><img src="images/mini-site.jpg"><h3>Mini Site 🌐</h3><p>Site vitrine professionnel</p></div>
+    <div class="box"><img src="images/google-business.jpg"><h3>Google Business 🚀</h3><p>Fiche optimisée</p></div>
+    <div class="box"><img src="images/google-maps.jpg"><h3>Google Maps 📍</h3><p>Visibilité locale</p></div>
+    <div class="box"><img src="images/avis-clients.jpg"><h3>Avis Clients ⭐</h3><p>Réputation renforcée</p></div>
 </section>
 
-<section class="testimonials" style="text-align:center;">
+<section class="testimonials">
     <h2>Ils nous recommandent</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
-        <div class="box"><p>"Grâce à Trafic Plus, mon salon de coiffure reçoit beaucoup plus d’appels chaque semaine !"</p><strong>– Julie, Coiffeuse à Paris</strong></div>
-        <div class="box"><p>"Service rapide et efficace. Mon commerce apparaît maintenant sur Google Maps et j’ai plus de clients."</p><strong>– Karim, Boulanger à Nanterre</strong></div>
-        <div class="box"><p>"Excellent accompagnement personnalisé. Je recommande vivement !"</p><strong>– Sophie, Esthéticienne à Versailles</strong></div>
-        <div class="box"><p>"Mon entreprise a gagné en visibilité et mes ventes ont augmenté !"</p><strong>– Laurent, Plombier à Boulogne</strong></div>
+    <div class="services">
+        <div class="box">“Plus d’appels chaque semaine.”<br><strong>Julie</strong></div>
+        <div class="box">“Visible sur Google Maps.”<br><strong>Karim</strong></div>
+        <div class="box">“Résultats rapides.”<br><strong>Sophie</strong></div>
     </div>
 </section>
 
-<section style="text-align:center;">
-    <h2>Demandez votre diagnostic gratuit</h2>
-    <p style="max-width:700px;margin:auto;line-height:1.6;">
-        Analyse complète de votre visibilité sur Google — sans engagement.
-    </p>
-    <a href="#contact" class="btn">Obtenir mon diagnostic</a>
-</section>
-
-<section class="services stats">
-    <div class="box"><h2 id="count1">0</h2><p>Entreprises aidées</p></div>
-    <div class="box"><h2 id="count2">0</h2><p>Appels générés</p></div>
-    <div class="box"><h2 id="count3">0</h2><p>% de clients satisfaits</p></div>
-</section>
-
-<!-- ===== Contact avec Formspree ===== -->
 <section id="contact">
-  <h2>Contactez-moi</h2>
-
-  <form id="contactForm" action="https://formspree.io/f/xgolejrl" method="POST" style="max-width:500px;margin:auto;text-align:left;">
-      <label>Nom :</label>
-      <input type="text" name="name" required>
-
-      <label>Email :</label>
-      <input type="email" name="email" required>
-
-      <label>Message :</label>
-      <textarea name="message" rows="5" required></textarea>
-
-      <button type="submit" class="btn">Envoyer</button>
-  </form>
-
-  <p id="successMessage" style="display:none;text-align:center;margin-top:15px;font-size:16px;color:green;">
-      Merci ! Votre message a été envoyé avec succès. Je vous répondrai rapidement.
-  </p>
-
-  <p style="text-align:center;margin-top:15px;font-size:16px;">
-      Ou envoyez directement un email à : <a href="mailto:Contact@traficplus.fr">Contact@traficplus.fr</a>
-  </p>
-
-  <a href="tel:+33752758690"
-   style="
-   position:fixed;
-   bottom:20px;
-   right:20px;
-   background:#ff6600;
-   color:white;
-   padding:15px 20px;
-   border-radius:50px;
-   font-weight:bold;
-   text-decoration:none;
-   box-shadow:0 10px 25px rgba(0,0,0,0.3);
-   z-index:999;">
-   📞 Appeler
-</a>
-
+    <h2>Contactez-moi</h2>
+    <form action="https://formspree.io/f/xgolejrl" method="POST" style="max-width:500px;margin:auto;">
+        <input type="text" name="name" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+        <button class="btn" type="submit">Envoyer</button>
+    </form>
+    <p style="text-align:center;margin-top:15px;">
+        📧 <a href="mailto:Contact@traficplus.fr">Contact@traficplus.fr</a>
+    </p>
 </section>
 
-<div id="modal">
-    <div id="modalContent">
-        <h2 id="modalTitle"></h2>
-        <p id="modalText"></p>
-        <br>
-        <button onclick="closeModal()" class="btn">Fermer</button>
-    </div>
-</div>
+<a href="tel:+33752758690" class="call-fixed">📞 Appeler</a>
 
 <footer>
     <p>© 2026 Trafic Plus – Tous droits réservés</p>
-    <p>📧 Email : <a href="mailto:Contact@traficplus.fr">Contact@traficplus.fr</a></p>
-
-    <h4>Ce site est protégé par une licence professionnelle</h4>
 </footer>
 
 <script>
-// ===== Modal =====
-function openModal(service){
-    let title="", text="";
-    if(service=="google"){ title="Google Business"; text="Création complète de votre fiche Google Business, optimisation des informations, photos, description et mise en place pour apparaître sur Google."; }
-    if(service=="maps"){ title="Google Maps"; text="Optimisation de votre positionnement local pour apparaître plus haut dans Google Maps."; }
-    if(service=="site"){ title="Mini Site"; text="Création d’un site vitrine professionnel pour présenter vos services et générer des appels."; }
-    if(service=="avis"){ title="Avis Clients"; text="Mise en place d’un système simple pour récolter plus d’avis positifs et renforcer votre crédibilité."; }
-    document.getElementById("modalTitle").innerHTML = title;
-    document.getElementById("modalText").innerHTML = text;
-    document.getElementById("modal").classList.add("show");
-}
-function closeModal(){ document.getElementById("modal").classList.remove("show"); }
-
-// ===== Compteurs =====
-let c1=0,c2=0,c3=0;
-const statSection = document.querySelector('.stats');
-let countersStarted=false;
-
-function updateCounters() {
-    if(!countersStarted) return;
-    if(c1<25){ c1++; document.getElementById("count1").innerHTML=c1; }
-    if(c2<180){ c2+=3; document.getElementById("count2").innerHTML=c2; }
-    if(c3<100){ c3++; document.getElementById("count3").innerHTML=c3; }
-}
-
-// ===== Sections & boxes apparaissent au scroll =====
-const sections = document.querySelectorAll('section');
-const boxes = document.querySelectorAll('.box');
-
+const sections = document.querySelectorAll('section, .box');
 window.addEventListener('scroll', () => {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        const height = window.innerHeight;
-        if(top < height - 50){ sec.classList.add('visible'); }
-    });
-    boxes.forEach(box => {
-        const top = box.getBoundingClientRect().top;
-        if(top < window.innerHeight - 50){ box.classList.add('visible'); }
-    });
-
-    const statsTop = statSection.getBoundingClientRect().top;
-    if(statsTop < window.innerHeight - 50){ countersStarted=true; }
-});
-
-// ===== Formulaire Formspree =====
-const form = document.getElementById("contactForm");
-const successMessage = document.getElementById("successMessage");
-
-form.addEventListener("submit", function(event){
-    event.preventDefault();
-    const formData = new FormData(form);
-    fetch(form.action, { method: "POST", body: formData, headers: { 'Accept': 'application/json' } })
-    .then(response => {
-        if(response.ok){
-            form.reset();
-            successMessage.style.display = "block";
-        } else {
-            response.json().then(data => {
-                if(data.errors){ alert(data.errors.map(e=>e.message).join(", ")); }
-                else{ alert("Une erreur est survenue. Veuillez réessayer."); }
-            })
+    sections.forEach(el => {
+        if(el.getBoundingClientRect().top < window.innerHeight - 50){
+            el.classList.add('visible');
         }
-    })
-    .catch(()=> alert("Une erreur est survenue. Veuillez réessayer."));
+    });
 });
 </script>
+
 </body>
 </html>
