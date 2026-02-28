@@ -11,13 +11,13 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #8e8b9f, #947e70);
+    background: linear-gradient(135deg, #bdbbc7, #bdbbc7);
     color: #333;
 }
 
 
 header {
-    color: white;
+    color: rgb(72, 62, 115);
     padding: 80px 20px;
     text-align: center;
 }
@@ -52,12 +52,12 @@ header p { font-size: 20px; }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+    box-shadow: 0 0 15px rgba(232, 231, 226, 0.943);
 }
 
 /* ===== Sections ===== */
 section {
-    background: white;
+    background: rgb(214, 212, 218);
     padding: 60px 20px;
     max-width: 1000px;
     margin: 40px auto;
@@ -77,7 +77,7 @@ h2 {
 }
 
 .box {
-    background: #fff;
+    background: #e2dcdc;
     padding: 25px;
     border-radius: 12px;
     border: 2px solid #ff6600;
@@ -199,6 +199,66 @@ footer a { color:white; }
     }
 }
 
+/* ===== Animation des points premium ===== */
+.premium-points {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.premium-points.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.premium-points li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.premium-points li svg {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+    color: #ff6600;
+}
+
+.premium-points li span {
+    display: inline-block;
+}
+
+/* ===== Animation Header Premium ===== */
+.fade-in-header {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeSlideHeader 1s forwards;
+    animation-delay: 0.3s;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+@keyframes fadeSlideHeader {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.header-services {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 25px 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.header-services li {
+    margin-bottom: 8px;
+}
+
 </style>
 </head>
 
@@ -206,18 +266,22 @@ footer a { color:white; }
 
 
 
-<header>
-    <h1>Générez plus de clients grâce à Google</h1>
+<header class="fade-in-header">
+    <h1>Attirez plus de clients et boostez votre visibilité</h1>
+
     <p>
-    J’aide les artisans et commerces d’Île-de-France à apparaître en priorité
-    sur Google et Google Maps, là où les clients cherchent déjà vos services.
+        Trafic Plus accompagne les artisans et commerces d’Île-de-France pour apparaître en priorité sur Google et Google Maps.  
+        Nous proposons un accompagnement complet : création de site web, conception de logo, marketing digital et autres services pour renforcer votre image professionnelle.
     </p>
 
-    <p style="font-size:16px;opacity:0.9;">
-    ✔ Sans publicité payante • ✔ Résultats locaux • ✔ Accompagnement personnalisé
-    </p>
+    <ul class="header-services">
+        <li>✔ Sans publicité payante</li>
+        <li>✔ Résultats locaux concrets</li>
+        <li>✔ Accompagnement humain et personnalisé</li>
+    </ul>
 
     <a href="#contact" class="btn">Diagnostic gratuit</a>
+
 </header>
 
 <section>
@@ -246,6 +310,54 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
 </section>
 
 <section>
+
+    <section style="background: linear-gradient(135deg, #f0f4ff, #ffffff); padding:60px 20px; border-radius:12px;">
+    <h2 style="text-align:center; color:#6a5acd; margin-bottom:30px;">Pourquoi choisir Trafic Plus ?</h2>
+
+    <p style="max-width:800px; margin:auto; line-height:1.7; text-align:center; font-size:17px;">
+        Chez Trafic Plus, nous accompagnons les artisans et commerces d’Île-de-France
+        pour booster leur visibilité locale et transformer les recherches Google en clients.
+        Notre approche combine expertise, stratégie et résultats concrets.
+    </p>
+
+    <ul class="premium-points" style="max-width:700px; margin:40px auto 0 auto; list-style:none; padding:0;">
+        <li>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.3 7.7l-1.41-1.41z"/>
+            </svg>
+            <span><strong>Visibilité locale optimisée :</strong> soyez vu en priorité sur Google et Google Maps.</span>
+        </li>
+        <li>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.3 7.7l-1.41-1.41z"/>
+            </svg>
+            <span><strong>Accompagnement complet :</strong> sites web, contenus, logos, design et maintenance informatique.</span>
+        </li>
+        <li>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.3 7.7l-1.41-1.41z"/>
+            </svg>
+            <span><strong>Résultats mesurables :</strong> plus d’appels, plus de visites et plus de clients.</span>
+        </li>
+        <li>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.3 7.7l-1.41-1.41z"/>
+            </svg>
+            <span><strong>Professionnalisme et rapidité :</strong> chaque projet est livré dans les délais avec un travail soigné.</span>
+        </li>
+        <li>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.3 7.7l-1.41-1.41z"/>
+            </svg>
+            <span><strong>Satisfaction client :</strong> nos clients constatent une réelle amélioration de leur activité locale.</span>
+        </li>
+    </ul>
+
+    <p style="max-width:800px; margin:40px auto 0 auto; line-height:1.7; text-align:center; font-size:17px;">
+        Trafic Plus n’est pas seulement un service, c’est un partenaire fiable pour votre succès local.
+        Faites confiance à notre expertise pour développer votre présence en ligne et augmenter vos clients.
+    </p>
+</section>
     <h2>Pourquoi faire appel à Trafic Plus ?</h2>
 
     <div class="services">
@@ -278,11 +390,14 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
 
 
 <section class="services">
+
     <div class="box">
-        <img src="images/mini-site.jpg" alt="">
-        <h3>Mini-site</h3>
-        <p>Site vitrine simple et efficace</p>
+        <img src="images/creation-site.jpg" alt="">
+        <h3>Création de site web et Mini-site</h3>
+        
+        <p>Site vitrine professionnel, rapide et optimisé Google, Mini Site vitrine simple et efficace</p>
     </div>
+    
     <div class="box">
         <img src="images/google-business.jpg" alt="">
         <h3>Google Business</h3>
@@ -308,12 +423,6 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
         <img src="images/creation-logo.jpg" alt="">
         <h3>Création de logo</h3>
         <p>Logo professionnel moderne adapté à votre activité</p>
-    </div>
-
-    <div class="box">
-        <img src="images/creation-site.jpg" alt="">
-        <h3>Création de site web</h3>
-        <p>Site vitrine professionnel, rapide et optimisé Google</p>
     </div>
 
     <div class="box">
@@ -448,6 +557,18 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
   </p>
 </footer>
 
+<script>
+    const observerPoints = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    });
 
+    document.querySelectorAll('.premium-points').forEach(section => {
+        observerPoints.observe(section);
+    });
+</script>
 </body>
 </html>
