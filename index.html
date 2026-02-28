@@ -7,7 +7,7 @@
 <meta name="description" content="Trafic Plus aide les artisans et commerces à gagner plus de clients grâce à Google Business et Google Maps en Île-de-France. Diagnostic gratuit.">
 
 <style>
-/* ===== Base ===== */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -15,7 +15,7 @@ body {
     color: #333;
 }
 
-/* ===== Header ===== */
+
 header {
     color: white;
     padding: 80px 20px;
@@ -148,6 +148,57 @@ footer {
     padding: 30px;
 }
 footer a { color:white; }
+
+/* ===== Section Directeur Premium ===== */
+.director-section {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.director-section img {
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid #ff6600;
+}
+
+.badge-exp {
+    display: inline-block;
+    background: #ff6600;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.director-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+.director-title {
+    color: #6a5acd;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.signature {
+    margin-top: 25px;
+    font-style: italic;
+    font-weight: bold;
+    color: #ff6600;
+}
+
+@media (max-width: 768px) {
+    .director-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
 </style>
 </head>
 
@@ -280,6 +331,48 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
 </section>
 
 
+<section>
+    <h2>LE DIRECTEUR DE TRAFIC PLUS</h2>
+
+    <div class="director-section">
+
+        <div>
+            <img src="images/directeur.jpg" alt="Souhaibou CISSE - Directeur Trafic Plus">
+        </div>
+
+        <div>
+
+            <span class="badge-exp">+5 ans d’expérience</span>
+
+            <div class="director-name">Souhaibou CISSE</div>
+            <div class="director-title">Fondateur & Consultant en visibilité digitale</div>
+
+            <p style="line-height:1.7;">
+                Fort de plus de 5 années d’expérience dans la visibilité digitale et les services numériques,
+                Souhaibou CISSE accompagne les artisans et petits commerces dans leur développement
+                afin d’augmenter leur visibilité et d’obtenir davantage de clients.
+                <br><br>
+                Spécialiste du référencement local (Google Business & Google Maps),
+                il intervient également dans la création de sites web professionnels,
+                la rédaction de contenus optimisés, la création de logos et d’identités visuelles,
+                le design graphique ainsi que la maintenance et l’assistance informatique.
+                <br><br>
+                Son approche repose sur la rigueur, la rapidité d’exécution et le respect des délais.
+                Chaque projet est réalisé avec sérieux et professionnalisme, avec un objectif clair :
+                obtenir des résultats concrets et mesurables.
+                <br><br>
+                Les clients sont toujours satisfaits de son travail et apprécient particulièrement
+                sa réactivité, la qualité des prestations fournies et l’efficacité des solutions mises en place.
+            </p>
+
+            <div class="signature">
+                — Souhaibou CISSE
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
 <section class="testimonials">
     <h2>Ils m’ont fait confiance</h2>
