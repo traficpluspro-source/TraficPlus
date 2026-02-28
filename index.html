@@ -69,7 +69,6 @@ h2 {
     text-align: center;
 }
 
-/* ===== Services ===== */
 .services {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
@@ -103,7 +102,6 @@ h2 {
     border-radius: 12px;
 }
 
-/* ===== Formulaire ===== */
 form input, form textarea {
     width: 100%;
     padding: 10px;
@@ -118,7 +116,7 @@ form button {
     cursor: pointer;
 }
 
-/* ===== Bouton téléphone flottant (mobile uniquement) ===== */
+
 .call-fixed {
     position: fixed;
     bottom: 20px;
@@ -133,14 +131,14 @@ form button {
     z-index: 999;
 }
 
-/* cacher sur desktop */
+
 @media (min-width: 768px) {
     .call-fixed {
         display: none;
     }
 }
 
-/* ===== Footer ===== */
+
 footer {
     background: #111;
     color: white;
@@ -149,7 +147,6 @@ footer {
 }
 footer a { color:white; }
 
-/* ===== Section Directeur Premium ===== */
 .director-section {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -199,7 +196,6 @@ footer a { color:white; }
     }
 }
 
-/* ===== Animation des points premium ===== */
 .premium-points {
     opacity: 0;
     transform: translateY(20px);
@@ -259,30 +255,239 @@ footer a { color:white; }
     margin-bottom: 8px;
 }
 
+/* ===== Header fixe premium avec rétractation ===== */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #6a5acd, #ff6600);
+    color: white;
+    z-index: 1000;
+    padding: 20px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
+}
+
+.header-fixed.shrink {
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.logo img {
+    height: 50px;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+}
+
+.header-fixed.shrink .logo img {
+    height: 40px;
+}
+
+.header-content {
+    flex: 1;
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 28px;
+    margin: 5px 0 10px 0;
+    animation: fadeSlideHeader 1s forwards;
+    transition: all 0.4s ease;
+}
+
+.header-fixed.shrink .header-content h1 {
+    font-size: 22px;
+}
+
+.header-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.header-services {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 15px 0;
+}
+
+.header-services li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Animation fade-in */
+@keyframes fadeSlideHeader {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Décalage body pour ne pas cacher le contenu */
+body {
+    padding-top: 220px; /* Ajuste selon la hauteur du header */
+}
+
+/* Bouton téléphone flottant */
+.call-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff6600;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+@media (min-width: 768px) {
+    .call-fixed {
+        display: none;
+    }
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo img {
+        margin-bottom: 10px;
+    }
+
+    .header-services li {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Bouton diagnostic dans header fixe */
+.header-fixed .btn {
+    padding: 8px 15px;       /* réduit la taille */
+    font-size: 14px;         /* texte plus petit */
+    border-radius: 25px;     /* arrondi plus subtil */
+    position: absolute;      /* pour le placer à droite */
+    right: 20px;             /* marge droite */
+    top: 50%;                /* centré verticalement */
+    transform: translateY(-50%);
+    background: #c2540a;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.header-fixed .btn:hover {
+    background: #533b2e;
+}
+
+/* Ajustement du shrink header */
+.header-fixed.shrink .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    right: 15px;
+    top: 50%;
+}
+
+/* Header fixe */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #6a5acd, #ff6600);
+    color: white;
+    z-index: 999;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Logo agrandi */
+.header-fixed .logo img {
+    height: 60px; /* augmente la taille du logo */
+    width: auto;
+}
+
+/* Bouton diagnostic en haut à droite */
+.header-fixed .btn {
+    padding: 10px 20px;       /* taille confortable */
+    font-size: 14px;
+    border-radius: 25px;
+    background: #ff6600;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;       /* reste dans le flux du flex */
+}
+
+.header-fixed .btn:hover {
+    background: #e65500;
+}
+
+/* Pour responsive si header rétréci */
+.header-fixed.shrink .logo img {
+    height: 50px;
+}
+
+.header-fixed.shrink .btn {
+    padding: 8px 15px;
+    font-size: 13px;
+}
+
 </style>
 </head>
 
 <body>
-
-
-
-<header class="fade-in-header">
-    <h1>Attirez plus de clients et boostez votre visibilité</h1>
-
-    <p>
-        Trafic Plus accompagne les artisans et commerces d’Île-de-France pour apparaître en priorité sur Google et Google Maps.  
-        Nous proposons un accompagnement complet : création de site web, conception de logo, marketing digital et autres services pour renforcer votre image professionnelle.
-    </p>
-
-    <ul class="header-services">
-        <li>✔ Sans publicité payante</li>
-        <li>✔ Résultats locaux concrets</li>
-        <li>✔ Accompagnement humain et personnalisé</li>
-    </ul>
+    
+<header class="header-fixed" id="header">
+    <div class="logo">
+        <img src="images/logo.png" alt="Trafic Plus Logo">
+    </div>
 
     <a href="#contact" class="btn">Diagnostic gratuit</a>
+</header>
+
+
+    <header class="header-fixed" id="header">
+    <div class="header-container">
+        <div class="logo">
+            <img src="images/logo.png" alt="Trafic Plus Logo">
+        </div>
+
+        <div class="header-content">
+            <h1>Attirez plus de clients et boostez votre visibilité</h1>
+
+            <ul class="header-services">
+                <li>✔ Sans publicité payante</li>
+                <li>✔ Résultats locaux concrets</li>
+                <li>✔ Accompagnement humain et personnalisé</li>
+            </ul>
+
+            <a href="#contact" class="btn">Diagnostic gratuit</a>
+        </div>
+    </div>
 
 </header>
+
+<!-- Bouton téléphone flottant (mobile) -->
+<a href="tel:+33752758690" class="call-fixed">📞 Appeler maintenant</a>
+
 
 <section>
     <h2>CE QUE JE FAIS</h2>
@@ -293,7 +498,7 @@ J’accompagne les artisans et commerces d’Île-de-France dans le développeme
 Ma mission principale : vous faire apparaître en priorité sur Google et Google Maps, là où vos clients recherchent déjà vos services.
 Objectif : générer plus d’appels, plus de visites et plus de clients grâce à une visibilité locale optimisée.
 
-Mais aujourd’hui, être visible ne suffit plus. 
+Mais aujourd’hui, être visible ne suffit plus.
 Il faut aussi inspirer confiance et projeter une image professionnelle.
 
 C’est pourquoi je propose également :
@@ -379,7 +584,7 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
     </div>
 
     <div class="box">
-        <h3>🤝 Accompagnement humain</h3>
+        <h3>🤝 Accompagnement personnalisé</h3>
     <p>
         Un seul interlocuteur, disponible et à l’écoute.
         Je vous explique ce que je fais et pourquoi je le fais.
@@ -546,6 +751,9 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
     votre visibilité sur Google dès maintenant.
   </p>
   <a href="#contact" class="btn">Je veux plus de clients</a>
+
+
+            
 </section>
 
 <footer>
@@ -568,6 +776,31 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
 
     document.querySelectorAll('.premium-points').forEach(section => {
         observerPoints.observe(section);
+    });
+</script>
+
+<script>
+    // Animation apparition sections (si déjà présent)
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+        observer.observe(section);
+    });
+
+    // ===== Rétractation du header au scroll =====
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50){
+            header.classList.add('shrink');
+        } else {
+            header.classList.remove('shrink');
+        }
     });
 </script>
 </body>
