@@ -55,7 +55,7 @@ header p { font-size: 20px; }
     box-shadow: 0 0 15px rgba(232, 231, 226, 0.943);
 }
 
-/* ===== Sections ===== */
+
 section {
     background: rgb(214, 212, 218);
     padding: 60px 20px;
@@ -95,7 +95,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* ===== Témoignages ===== */
+
 .testimonials {
     background: #f0f4ff;
     padding: 40px 20px;
@@ -228,7 +228,7 @@ footer a { color:white; }
     display: inline-block;
 }
 
-/* ===== Animation Header Premium ===== */
+
 .fade-in-header {
     opacity: 0;
     transform: translateY(-20px);
@@ -255,7 +255,7 @@ footer a { color:white; }
     margin-bottom: 8px;
 }
 
-/* ===== Header fixe premium avec rétractation ===== */
+
 .header-fixed {
     position: fixed;
     top: 0;
@@ -324,18 +324,15 @@ footer a { color:white; }
     margin: 0 10px;
 }
 
-/* Animation fade-in */
 @keyframes fadeSlideHeader {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Décalage body pour ne pas cacher le contenu */
 body {
-    padding-top: 220px; /* Ajuste selon la hauteur du header */
+    padding-top: 220px;
 }
 
-/* Bouton téléphone flottant */
 .call-fixed {
     position: fixed;
     bottom: 20px;
@@ -356,7 +353,6 @@ body {
     }
 }
 
-/* Adaptation mobile */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -373,14 +369,14 @@ body {
     }
 }
 
-/* Bouton diagnostic dans header fixe */
+
 .header-fixed .btn {
-    padding: 8px 15px;       /* réduit la taille */
-    font-size: 14px;         /* texte plus petit */
-    border-radius: 25px;     /* arrondi plus subtil */
-    position: absolute;      /* pour le placer à droite */
-    right: 20px;             /* marge droite */
-    top: 50%;                /* centré verticalement */
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 25px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
     transform: translateY(-50%);
     background: #c2540a;
     color: white;
@@ -393,7 +389,6 @@ body {
     background: #533b2e;
 }
 
-/* Ajustement du shrink header */
 .header-fixed.shrink .btn {
     padding: 6px 12px;
     font-size: 12px;
@@ -401,7 +396,6 @@ body {
     top: 50%;
 }
 
-/* Header fixe */
 .header-fixed {
     position: fixed;
     top: 0;
@@ -417,15 +411,12 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* Logo agrandi */
 .header-fixed .logo img {
-    height: 60px; /* augmente la taille du logo */
-    width: auto;
+    height: 60px;
 }
 
-/* Bouton diagnostic en haut à droite */
 .header-fixed .btn {
-    padding: 10px 20px;       /* taille confortable */
+    padding: 10px 20px;
     font-size: 14px;
     border-radius: 25px;
     background: #ff6600;
@@ -433,14 +424,13 @@ body {
     font-weight: bold;
     text-decoration: none;
     transition: all 0.3s ease;
-    position: relative;       /* reste dans le flux du flex */
+    position: relative;
 }
 
 .header-fixed .btn:hover {
     background: #e65500;
 }
 
-/* Pour responsive si header rétréci */
 .header-fixed.shrink .logo img {
     height: 50px;
 }
@@ -448,6 +438,20 @@ body {
 .header-fixed.shrink .btn {
     padding: 8px 15px;
     font-size: 13px;
+}
+
+.services-summary {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 18px;
+    color: #333;
+}
+
+.services-summary p {
+    margin-bottom: 18px;
+    font-weight: bold;
 }
 
 </style>
@@ -485,7 +489,6 @@ body {
 
 </header>
 
-<!-- Bouton téléphone flottant (mobile) -->
 <a href="tel:+33752758690" class="call-fixed">📞 Appeler maintenant</a>
 
 
@@ -594,14 +597,16 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
 </section>
 
 
-<div style="max-width:900px;margin:40px auto 0 auto;text-align:center;line-height:1.8;font-size:18px;">
-    <p><strong>Une stratégie digitale efficace et concrète.</strong></p>
+<div class="services-summary">
 
-    <p><strong>Aujourd’hui, vos clients recherchent vos services sur Google. S’ils ne vous trouvent pas rapidement, ils contactent vos concurrents. Notre mission est simple : vous positionner en priorité sur Google et Google Maps afin de transformer ces recherches en appels, en visites et en ventes.</strong></p>
+    <p>Chez Trafic Plus, nous aidons les artisans et commerces à obtenir plus de clients grâce à une stratégie digitale efficace et concrète.</p>
 
-    <p><strong>Nous ne faisons pas seulement de la visibilité. Nous construisons une image professionnelle complète : site web moderne et optimisé, logo impactant, contenus convaincants, design graphique cohérent et gestion des avis clients. Chaque détail est pensé pour inspirer confiance et déclencher le passage à l’action.</strong></p>
+    <p>Aujourd’hui, vos clients recherchent vos services sur Google. S’ils ne vous trouvent pas rapidement, ils contactent vos concurrents. Notre mission est simple : vous positionner en priorité sur Google et Google Maps afin de transformer ces recherches en appels, en visites et en ventes.</p>
 
-    <p><strong>Avec un accompagnement personnalisé, un interlocuteur unique et des solutions adaptées à votre activité, vous bénéficiez d’un service clair, structuré et orienté résultats.</strong></p>
+    <p>Nous ne faisons pas seulement de la visibilité. Nous construisons une image professionnelle complète : site web moderne et optimisé, logo impactant, contenus convaincants, design graphique cohérent et gestion des avis clients. Chaque détail est pensé pour inspirer confiance et déclencher le passage à l’action.</p>
+
+    <p>Avec un accompagnement personnalisé, un interlocuteur unique et des solutions adaptées à votre activité, vous bénéficiez d’un service clair, structuré et orienté résultats.</p>
+
 </div>
 
 <section class="services">
@@ -790,8 +795,8 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
 </script>
 
 <script>
-    // Animation apparition sections (si déjà présent)
-    const observer = new IntersectionObserver(entries => {
+
+const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if(entry.isIntersecting){
                 entry.target.classList.add('visible');
@@ -803,7 +808,7 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
         observer.observe(section);
     });
 
-    // ===== Rétractation du header au scroll =====
+
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
         if(window.scrollY > 50){
@@ -812,6 +817,22 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
             header.classList.remove('shrink');
         }
     });
+</script>
+
+<script>
+
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault(); 
+});
+
+document.addEventListener('keydown', function(e) {
+    if(e.key === "F12") {
+        e.preventDefault();
+    }
+    if((e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || (e.ctrlKey && e.key === "U")) {
+        e.preventDefault();
+    }
+});
 </script>
 </body>
 </html>
