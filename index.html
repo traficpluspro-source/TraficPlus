@@ -8,16 +8,17 @@
 
 <style>
 
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #bdbbc7, #bdbbc7);
-    color: #333;
+    background: linear-gradient(135deg, #d6d5d9, #e0dfe3);
+    color: #1b1a1b;
 }
 
 
 header {
-    color: rgb(72, 62, 115);
+    color: rgb(105, 92, 163);
     padding: 80px 20px;
     text-align: center;
 }
@@ -42,7 +43,7 @@ header p { font-size: 20px; }
     display: inline-block;
     margin-top: 25px;
     padding: 15px 30px;
-    background: linear-gradient(135deg, #ff6600, #6a5acd);
+    background: linear-gradient(135deg, #705dd3, #705dd3);
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -57,7 +58,7 @@ header p { font-size: 20px; }
 
 
 section {
-    background: rgb(214, 212, 218);
+    background: rgb(247, 245, 250);
     padding: 60px 20px;
     max-width: 1000px;
     margin: 40px auto;
@@ -65,7 +66,8 @@ section {
 }
 
 h2 {
-    color: #ff6600;
+    color:  #705dd3;
+
     text-align: center;
 }
 
@@ -76,10 +78,10 @@ h2 {
 }
 
 .box {
-    background: #e2dcdc;
+    background: #f9f7f7;
     padding: 25px;
     border-radius: 12px;
-    border: 2px solid #ff6600;
+    border: 2px solid #705dd3;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -91,13 +93,13 @@ h2 {
 .box img {
     max-width: 100%;
     border-radius: 8px;
-    border: 2px solid #ff6600;
+    border: 2px solid #5c5981;
     margin-bottom: 15px;
 }
 
 
 .testimonials {
-    background: #f0f4ff;
+    background: #d0d3dc;
     padding: 40px 20px;
     border-radius: 12px;
 }
@@ -107,7 +109,7 @@ form input, form textarea {
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 8px;
-    border: 2px solid #ff6600;
+    border: 2px solid #8875e7;
 }
 
 form button {
@@ -121,7 +123,7 @@ form button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #ff6600;
+    background: #705dd3;
     color: white;
     padding: 15px 20px;
     border-radius: 50px;
@@ -157,12 +159,12 @@ footer a { color:white; }
 .director-section img {
     width: 100%;
     border-radius: 12px;
-    border: 3px solid #ff6600;
+    border: 3px solid #705dd3;
 }
 
 .badge-exp {
     display: inline-block;
-    background: #ff6600;
+    background: #db4a34;
     color: white;
     padding: 8px 18px;
     border-radius: 50px;
@@ -186,7 +188,7 @@ footer a { color:white; }
     margin-top: 25px;
     font-style: italic;
     font-weight: bold;
-    color: #ff6600;
+    color: #705dd3;
 }
 
 @media (max-width: 768px) {
@@ -221,7 +223,7 @@ footer a { color:white; }
     margin-right: 12px;
     flex-shrink: 0;
     filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
-    color: #ff6600;
+    color: #705dd3;
 }
 
 .premium-points li span {
@@ -261,7 +263,7 @@ footer a { color:white; }
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(135deg, #6a5acd, #ff6600);
+    background: linear-gradient(135deg, #705dd3, #652d07);
     color: white;
     z-index: 1000;
     padding: 20px 20px;
@@ -337,7 +339,7 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #ff6600;
+    background: #746fac;
     color: white;
     padding: 15px 20px;
     border-radius: 50px;
@@ -378,7 +380,7 @@ body {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background: #c2540a;
+    background: #c77e4e;
     color: white;
     font-weight: bold;
     text-decoration: none;
@@ -401,7 +403,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(135deg, #6a5acd, #ff6600);
+    background: linear-gradient(135deg, #6a5acd, #dd7936);
     color: white;
     z-index: 999;
     padding: 15px 20px;
@@ -419,7 +421,7 @@ body {
     padding: 10px 20px;
     font-size: 14px;
     border-radius: 25px;
-    background: #ff6600;
+    background: #492ca9;
     color: white;
     font-weight: bold;
     text-decoration: none;
@@ -428,7 +430,7 @@ body {
 }
 
 .header-fixed .btn:hover {
-    background: #e65500;
+    background: #a96742;
 }
 
 .header-fixed.shrink .logo img {
@@ -455,6 +457,53 @@ body {
 }
 
 </style>
+
+<style>
+.scroll-image {
+    position: relative;
+    max-width: 300px; /* taille de l'image */
+    display: block;
+    margin: 50px auto; /* centré verticalement dans sa section */
+    opacity: 0;
+    animation: scrollCycle 8s linear infinite; /* 8s pour un cycle complet */
+}
+
+@keyframes scrollCycle {
+    0% {
+        transform: translateX(-150%); /* hors écran à gauche */
+        opacity: 0;
+    }
+    12.5% {
+        transform: translateX(0); /* au centre */
+        opacity: 1;
+    }
+    37.5% {
+        transform: translateX(0); /* reste 2s au centre */
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(150%); /* part vers la droite et disparaît */
+        opacity: 0;
+    }
+    62.5% {
+        transform: translateX(-150%); /* réapparait à gauche */
+        opacity: 0;
+    }
+    75% {
+        transform: translateX(0); /* arrive au centre */
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(150%); /* part vers la droite */
+        opacity: 0;
+    }
+}
+</style>
+
+
+
+
+
 </head>
 
 <body>
@@ -491,6 +540,10 @@ body {
 
 <a href="tel:+33752758690" class="call-fixed">📞 Appeler maintenant</a>
 
+<section class="scroll-image-section">
+    <img src="images/animation-image.jpg" alt="Image animée au scroll" class="scroll-image">
+</section>
+
 
 <section>
     <h2>CE QUE JE FAIS</h2>
@@ -517,7 +570,7 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
     </p>
 </section>
 
-<section>
+
 
     <section style="background: linear-gradient(135deg, #f0f4ff, #ffffff); padding:60px 20px; border-radius:12px;">
     <h2 style="text-align:center; color:#6a5acd; margin-bottom:30px;">Pourquoi choisir Trafic Plus ?</h2>
@@ -596,18 +649,26 @@ Mon approche est simple : vous offrir une solution complète pour développer vo
 </div>
 </section>
 
+<section style="background: linear-gradient(135deg, #f0f4ff, #ffffff); padding:60px 20px; border-radius:12px;">
+    <h2 style="text-align:center; color:#6a5acd; margin-bottom:30px;">Nos Services en Détail</h2>
 
-<div class="services-summary">
+    <div style="max-width:900px;margin:40px auto 0 auto;text-align:center;line-height:1.8;font-size:18px;">
+        <p><strong>Création de sites web modernes et optimisés Google, ainsi que des mini-sites efficaces pour présenter votre activité.</strong></p>
 
-    <p>Chez Trafic Plus, nous aidons les artisans et commerces à obtenir plus de clients grâce à une stratégie digitale efficace et concrète.</p>
+        <p><strong>Optimisation et gestion de Google Business et Google Maps pour un meilleur positionnement local et plus de visibilité auprès de vos clients.</strong></p>
 
-    <p>Aujourd’hui, vos clients recherchent vos services sur Google. S’ils ne vous trouvent pas rapidement, ils contactent vos concurrents. Notre mission est simple : vous positionner en priorité sur Google et Google Maps afin de transformer ces recherches en appels, en visites et en ventes.</p>
+        <p><strong>Rédaction de contenus professionnels et convaincants pour votre site web afin de capter l’attention et inspirer confiance.</strong></p>
 
-    <p>Nous ne faisons pas seulement de la visibilité. Nous construisons une image professionnelle complète : site web moderne et optimisé, logo impactant, contenus convaincants, design graphique cohérent et gestion des avis clients. Chaque détail est pensé pour inspirer confiance et déclencher le passage à l’action.</p>
+        <p><strong>Création de logos et identités visuelles modernes, adaptées à votre activité pour renforcer votre image professionnelle.</strong></p>
 
-    <p>Avec un accompagnement personnalisé, un interlocuteur unique et des solutions adaptées à votre activité, vous bénéficiez d’un service clair, structuré et orienté résultats.</p>
+        <p><strong>Design graphique pour vos supports marketing, flyers, visuels réseaux sociaux et communication globale.</strong></p>
 
-</div>
+        <p><strong>Maintenance informatique et assistance pour sécuriser vos sites et accompagner votre activité en toute sérénité.</strong></p>
+
+        <p><strong>Accompagnement personnalisé et stratégique, avec un interlocuteur unique, pour maximiser vos résultats et transformer la visibilité en clients.</strong></p>
+    </div>
+</section>
+
 
 <section class="services">
 
@@ -834,5 +895,8 @@ document.addEventListener('keydown', function(e) {
     }
 });
 </script>
+
+
 </body>
 </html>
+
