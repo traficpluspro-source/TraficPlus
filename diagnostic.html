@@ -3,585 +3,387 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diagnostic & Orientation | TRAFIC PLUS</title>
-<meta name="description" content="Identifiez votre besoin et faites-vous orienter par TRAFIC PLUS vers une solution adaptée.">
+<meta name="description" content="Identifiez votre besoin et faites-vous orienter par TRAFIC PLUS.">
 
 <style>
 :root {
-    --navy: #101b2d;
-    --navy-light: #1c2d45;
-    --gold: #c5a46d;
-    --gold-light: #e5d1a4;
-    --text: #243043;
-    --muted: #6b7280;
-    --bg: #f5f6f8;
-    --white: #ffffff;
-    --border: #e4e7ec;
+    --navy:#101b2d;
+    --navy2:#1d2c44;
+    --gold:#c5a46d;
+    --gold2:#e5d1a4;
+    --bg:#f4f6f8;
+    --text:#243043;
+    --muted:#6b7280;
+    --border:#e3e7ed;
+    --white:#fff;
 }
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
 }
+button,input,textarea,select { font:inherit; }
+button { cursor:pointer; }
 
-button, input, textarea, select {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-/* HEADER */
 
 .header {
-    background: var(--navy);
-    padding: 18px 6%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    border-bottom: 1px solid rgba(197,164,109,.35);
+    background:var(--navy);
+    padding:16px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    border-bottom:1px solid rgba(197,164,109,.4);
 }
-
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: white;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:white;
 }
-
 .logo img {
-    width: 58px;
-    height: 58px;
-    object-fit: contain;
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+.logo strong {
+    display:block;
+    letter-spacing:2px;
+    font-size:17px;
+}
+.logo span {
+    display:block;
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:2px;
+    margin-top:4px;
+}
+.back {
+    color:white;
+    text-decoration:none;
+    font-size:13px;
 }
 
-.logo-text strong {
-    display: block;
-    letter-spacing: 2px;
-    font-size: 18px;
-}
-
-.logo-text span {
-    color: var(--gold);
-    font-size: 11px;
-    letter-spacing: 2px;
-    display: block;
-    margin-top: 4px;
-}
-
-.header-back {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    opacity: .85;
-}
-
-.header-back:hover {
-    color: var(--gold-light);
-}
-
-/* HERO */
 
 .hero {
     background:
-      radial-gradient(circle at 85% 20%, rgba(197,164,109,.15), transparent 35%),
-      linear-gradient(135deg, var(--navy), var(--navy-light));
-    color: white;
-    padding: 85px 20px 75px;
-    text-align: center;
+      radial-gradient(circle at 85% 20%,rgba(197,164,109,.15),transparent 35%),
+      linear-gradient(135deg,var(--navy),var(--navy2));
+    color:white;
+    text-align:center;
+    padding:75px 20px;
 }
-
-.hero-content {
-    max-width: 900px;
-    margin: auto;
-}
-
+.hero-content { max-width:850px; margin:auto; }
 .hero-tag {
-    color: var(--gold-light);
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 22px;
+    color:var(--gold2);
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:20px;
 }
-
 .hero h1 {
-    font-size: clamp(32px, 5vw, 58px);
-    line-height: 1.15;
-    margin: 0 0 22px;
-    font-weight: 700;
+    font-size:clamp(32px,5vw,55px);
+    line-height:1.2;
+    margin:0 0 20px;
 }
-
-.hero h1 span {
-    color: var(--gold-light);
-}
-
+.hero h1 span { color:var(--gold2); }
 .hero p {
-    max-width: 680px;
-    margin: auto;
-    color: rgba(255,255,255,.78);
-    font-size: 17px;
-    line-height: 1.8;
+    max-width:700px;
+    margin:auto;
+    color:rgba(255,255,255,.8);
+    font-size:16px;
+    line-height:1.8;
 }
 
-.hero-note {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 18px;
-    border: 1px solid rgba(197,164,109,.4);
-    border-radius: 50px;
-    color: var(--gold-light);
-    font-size: 13px;
-}
-
-/* MAIN */
 
 .main {
-    width: min(1100px, 92%);
-    margin: -35px auto 80px;
-    position: relative;
+    width:min(1100px,94%);
+    margin:-35px auto 70px;
+    position:relative;
 }
-
-.diagnostic-panel {
-    background: white;
-    border-radius: 20px;
-    padding: 38px;
-    box-shadow: 0 18px 60px rgba(16,27,45,.08);
+.panel {
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 18px 60px rgba(16,27,45,.08);
 }
-
-.step-label {
-    font-size: 12px;
-    color: var(--gold);
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.panel-title {
-    font-size: 29px;
-    color: var(--navy);
-    margin: 0 0 12px;
-}
-
-.panel-intro {
-    color: var(--muted);
-    line-height: 1.7;
-    margin: 0 0 28px;
-}
-
-/* PROGRESS */
-
-.progress-wrap {
-    margin-bottom: 35px;
-}
-
+.progress-wrap { margin-bottom:32px; }
 .progress-info {
-    display: flex;
-    justify-content: space-between;
-    color: var(--muted);
-    font-size: 12px;
-    margin-bottom: 9px;
+    display:flex;
+    justify-content:space-between;
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:9px;
 }
-
 .progress-bar {
-    height: 5px;
-    background: #edf0f3;
-    border-radius: 10px;
-    overflow: hidden;
+    height:5px;
+    background:#edf0f3;
+    border-radius:20px;
+    overflow:hidden;
 }
-
 .progress-fill {
-    height: 100%;
-    width: 0%;
-    background: var(--gold);
-    border-radius: 10px;
-    transition: width .35s ease;
+    height:100%;
+    width:0;
+    background:var(--gold);
+    transition:width .3s;
+}
+.tag {
+    color:var(--gold);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+.title {
+    color:var(--navy);
+    font-size:28px;
+    line-height:1.3;
+    margin:0 0 12px;
+}
+.intro {
+    color:var(--muted);
+    line-height:1.7;
+    margin:0 0 25px;
 }
 
-/* BRANCHES */
 
 .branches {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:15px;
 }
-
 .branch {
-    position: relative;
-    text-align: left;
-    padding: 24px 20px;
-    border: 1px solid var(--border);
-    background: white;
-    border-radius: 14px;
-    transition: .25s;
-    color: var(--text);
-    min-height: 170px;
+    position:relative;
+    text-align:left;
+    border:1px solid var(--border);
+    background:white;
+    border-radius:14px;
+    padding:20px;
+    min-height:160px;
+    transition:.2s;
+    color:var(--text);
 }
-
 .branch:hover {
-    border-color: var(--gold);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(16,27,45,.06);
+    border-color:var(--gold);
+    transform:translateY(-2px);
 }
-
 .branch.active {
-    border: 2px solid var(--gold);
-    background: #fcfaf5;
-    box-shadow: 0 8px 25px rgba(197,164,109,.12);
+    border:2px solid var(--gold);
+    background:#fcfaf5;
 }
-
-.branch-icon {
-    width: 43px;
-    height: 43px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f3eee4;
-    color: var(--navy);
-    border-radius: 12px;
-    font-size: 21px;
-    margin-bottom: 15px;
+.branch .icon {
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:#f3eee4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    margin-bottom:12px;
 }
-
 .branch h3 {
-    margin: 0 0 9px;
-    font-size: 16px;
-    color: var(--navy);
+    color:var(--navy);
+    font-size:16px;
+    margin:0 0 8px;
 }
-
 .branch p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.6;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+    margin:0;
 }
-
-.branch-check {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: var(--gold);
-    display: none;
-    font-size: 18px;
+.check {
+    display:none;
+    position:absolute;
+    top:12px;
+    right:12px;
+    color:var(--gold);
 }
+.branch.active .check { display:block; }
 
-.branch.active .branch-check {
-    display: block;
+
+.dynamic-form {
+    display:none;
+    margin-top:35px;
+    padding-top:30px;
+    border-top:1px solid var(--border);
 }
-
-/* FORM */
-
-.form-section {
-    display: none;
-    margin-top: 38px;
-    border-top: 1px solid var(--border);
-    padding-top: 32px;
-    animation: appear .3s ease;
+.dynamic-form.show { display:block; }
+.selected {
+    display:inline-block;
+    padding:9px 14px;
+    border-radius:30px;
+    background:#f6f1e8;
+    color:var(--navy);
+    font-size:13px;
+    margin-bottom:20px;
 }
-
-.form-section.show {
-    display: block;
+.subtype-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+    margin-bottom:25px;
 }
-
-@keyframes appear {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+.subtype {
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px;
+    text-align:left;
+    background:white;
+    color:var(--text);
+    line-height:1.5;
 }
-
-.selected-branch {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #f6f1e8;
-    color: var(--navy);
-    padding: 9px 14px;
-    border-radius: 50px;
-    font-size: 13px;
-    margin-bottom: 20px;
+.subtype.active {
+    border:2px solid var(--gold);
+    background:#fcfaf5;
 }
-
-.field {
-    margin-bottom: 22px;
-}
-
+.field { margin-bottom:20px; }
 .field label {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--navy);
-    margin-bottom: 9px;
+    display:block;
+    font-weight:bold;
+    color:var(--navy);
+    font-size:14px;
+    margin-bottom:9px;
 }
-
-.field small {
-    display: block;
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 7px;
-    line-height: 1.6;
+.field input,.field select,.field textarea {
+    width:100%;
+    border:1px solid #dfe3e8;
+    border-radius:10px;
+    padding:13px 14px;
+    outline:none;
+    background:white;
+    color:var(--text);
 }
-
-.field input,
-.field textarea,
-.field select {
-    width: 100%;
-    border: 1px solid #dfe3e8;
-    border-radius: 10px;
-    padding: 14px 15px;
-    outline: none;
-    background: #fff;
-    color: var(--text);
+.field input:focus,.field select:focus,.field textarea:focus {
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(197,164,109,.12);
 }
-
-.field input:focus,
-.field textarea:focus,
-.field select:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(197,164,109,.12);
-}
-
 .field textarea {
-    resize: vertical;
-    min-height: 130px;
-    line-height: 1.7;
+    min-height:120px;
+    resize:vertical;
+    line-height:1.7;
+}
+.field small {
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+    margin-top:7px;
+}
+.two {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+.form-divider {
+    margin:30px 0 25px;
+    padding-top:25px;
+    border-top:1px solid var(--border);
+}
+.form-divider h3 {
+    color:var(--navy);
+    margin:0 0 8px;
+}
+.form-divider p {
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
 }
 
-.field select {
-    appearance: auto;
-}
-
-.two-fields {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
 
 .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
 }
-
 .btn {
-    border: none;
-    border-radius: 10px;
-    padding: 15px 23px;
-    text-decoration: none;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 9px;
-    font-weight: bold;
-    transition: .2s;
+    border:0;
+    border-radius:10px;
+    padding:14px 20px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.2s;
 }
+.primary { background:var(--navy); color:white; }
+.primary:hover { background:var(--navy2); }
+.gold { background:var(--gold); color:var(--navy); }
+.gold:hover { background:var(--gold2); }
+.secondary { background:#eef0f3; color:var(--navy); }
 
-.btn-primary {
-    background: var(--navy);
-    color: white;
-}
-
-.btn-primary:hover {
-    background: var(--navy-light);
-    transform: translateY(-1px);
-}
-
-.btn-gold {
-    background: var(--gold);
-    color: var(--navy);
-}
-
-.btn-gold:hover {
-    background: var(--gold-light);
-}
-
-.btn-secondary {
-    background: #f0f2f5;
-    color: var(--navy);
-}
-
-.btn-secondary:hover {
-    background: #e4e7ec;
-}
-
-.btn:disabled {
-    opacity: .45;
-    cursor: not-allowed;
-}
-
-/* RESULT */
 
 .result {
-    display: none;
-    margin-top: 30px;
-    background: #f8f9fb;
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    padding: 25px;
+    display:none;
+    margin-top:30px;
+    padding:25px;
+    border:1px solid var(--border);
+    background:#f8f9fb;
+    border-radius:15px;
 }
-
-.result.show {
-    display: block;
-    animation: appear .3s ease;
+.result.show { display:block; }
+.result h3 { color:var(--navy); margin-top:0; }
+.result p { color:var(--muted); line-height:1.7; }
+.message {
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px;
+    font-size:14px;
+    line-height:1.7;
 }
-
-.result h3 {
-    color: var(--navy);
-    margin: 0 0 10px;
+.notice {
+    font-size:12px;
+    color:var(--muted);
+    line-height:1.7;
+    text-align:center;
+    padding:25px 10px 0;
 }
-
-.result p {
-    color: var(--muted);
-    line-height: 1.7;
-}
-
-.result-message {
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 18px;
-    line-height: 1.7;
-    color: var(--text);
-    font-size: 14px;
-}
-
-/* BOTTOM INFO */
-
-.info-strip {
-    text-align: center;
-    padding: 25px 15px 0;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.7;
-}
-
 .footer {
-    text-align: center;
-    padding: 35px 20px;
-    background: var(--navy);
-    color: rgba(255,255,255,.65);
-    font-size: 13px;
+    background:var(--navy);
+    color:rgba(255,255,255,.65);
+    text-align:center;
+    padding:30px 20px;
+    font-size:13px;
+    line-height:1.8;
 }
+.footer strong { color:var(--gold2); letter-spacing:2px; }
+.footer a { color:white; text-decoration:none; }
 
-.footer strong {
-    color: var(--gold-light);
-    letter-spacing: 2px;
+@media(max-width:850px) {
+    .branches { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .panel { padding:25px; }
 }
-
-.footer a {
-    color: white;
-    text-decoration: none;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 850px) {
-    .branches {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .diagnostic-panel {
-        padding: 28px;
-    }
-}
-
-@media (max-width: 600px) {
-    .header {
-        padding: 14px 5%;
-    }
-
-    .logo img {
-        width: 46px;
-        height: 46px;
-    }
-
-    .logo-text strong {
-        font-size: 15px;
-    }
-
-    .header-back {
-        font-size: 12px;
-    }
-
-    .hero {
-        padding: 65px 18px 65px;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .main {
-        width: 94%;
-    }
-
-    .diagnostic-panel {
-        padding: 22px 17px;
-        border-radius: 15px;
-    }
-
-    .panel-title {
-        font-size: 24px;
-    }
-
-    .branches {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .branch {
-        min-height: auto;
-        padding: 18px;
-        display: grid;
-        grid-template-columns: 48px 1fr;
-        column-gap: 13px;
-        align-items: center;
-    }
-
-    .branch-icon {
-        grid-row: span 2;
-        margin: 0;
-    }
-
-    .branch h3 {
-        align-self: end;
-    }
-
-    .branch p {
-        align-self: start;
-    }
-
-    .two-fields {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .actions {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-    }
+@media(max-width:600px) {
+    .header { padding:12px 4%; }
+    .logo img { width:45px;height:45px; }
+    .logo strong { font-size:14px; }
+    .logo span { font-size:9px;letter-spacing:1px; }
+    .back { font-size:11px; }
+    .hero { padding:60px 18px; }
+    .hero h1 { font-size:33px; }
+    .hero p { font-size:15px; }
+    .main { width:94%; }
+    .panel { padding:20px 16px; border-radius:15px; }
+    .title { font-size:23px; }
+    .branches { grid-template-columns:1fr; gap:10px; }
+    .branch { min-height:0; padding:16px; }
+    .branch .icon { margin-bottom:8px; }
+    .subtype-grid,.two { grid-template-columns:1fr; gap:10px; }
+    .actions { flex-direction:column; }
+    .btn { width:100%; }
 }
 </style>
 </head>
@@ -590,220 +392,259 @@ button {
 
 <header class="header">
     <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="Logo TRAFIC PLUS">
-        <div class="logo-text">
+        <img src="images/logo.png" alt="TRAFIC PLUS">
+        <div>
             <strong>TRAFIC PLUS</strong>
             <span>DIAGNOSTIC & ORIENTATION</span>
         </div>
     </a>
-
-    <a href="index.html" class="header-back">← Retour à l'accueil</a>
+    <a href="index.html" class="back">← Retour au site</a>
 </header>
 
 <section class="hero">
     <div class="hero-content">
         <div class="hero-tag">Votre besoin · Notre orientation</div>
-
-        <h1>Vous avez un projet,<br>
-        <span>un besoin ou une difficulté ?</span></h1>
-
+        <h1>Vous avez un projet,<br><span>un besoin ou une difficulté ?</span></h1>
         <p>
-            Expliquez-nous votre situation. TRAFIC PLUS vous accompagne
-            dans l'identification de votre besoin et vous oriente vers
-            le service ou la solution la plus adaptée.
+            Décrivez-nous votre situation. TRAFIC PLUS vous aide à identifier
+            votre besoin et à préparer votre demande d'accompagnement.
         </p>
-
-        <div class="hero-note">
-            Un premier échange pour mieux comprendre votre situation.
-        </div>
     </div>
 </section>
 
 <main class="main">
-    <div class="diagnostic-panel">
+<div class="panel">
 
-        <div class="progress-wrap">
-            <div class="progress-info">
-                <span id="progressLabel">Étape 1 · Votre domaine</span>
-                <span id="progressPercent">0%</span>
+    <div class="progress-wrap">
+        <div class="progress-info">
+            <span id="progressLabel">Étape 1 · Votre domaine</span>
+            <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <div class="tag">01 — Orientation</div>
+    <h2 class="title">Quel est votre besoin ?</h2>
+    <p class="intro">Choisissez le domaine qui correspond à votre situation. Si vous hésitez, sélectionnez « Autre besoin ».</p>
+
+    <div class="branches">
+
+        <button class="branch" data-category="Numérique & informatique">
+            <span class="check">✓</span><div class="icon">💻</div>
+            <h3>Numérique & informatique</h3>
+            <p>Sites internet, outils numériques, assistance informatique et solutions digitales.</p>
+        </button>
+
+        <button class="branch" data-category="Communication & visibilité">
+            <span class="check">✓</span><div class="icon">📣</div>
+            <h3>Communication & visibilité</h3>
+            <p>Identité visuelle, publicité, réseaux sociaux et visibilité.</p>
+        </button>
+
+        <button class="branch" data-category="Administration & préfecture">
+            <span class="check">✓</span><div class="icon">📄</div>
+            <h3>Administration & préfecture</h3>
+            <p>Démarches, dossiers, rendez-vous et difficultés administratives.</p>
+        </button>
+
+        <button class="branch" data-category="Études, bourses & visas">
+            <span class="check">✓</span><div class="icon">🎓</div>
+            <h3>Études, bourses & visas</h3>
+            <p>Orientation, études, admission, bourses et démarches de visa.</p>
+        </button>
+
+        <button class="branch" data-category="Entreprise & développement">
+            <span class="check">✓</span><div class="icon">📈</div>
+            <h3>Entreprise & développement</h3>
+            <p>Création, organisation, commerce, stratégie et développement.</p>
+        </button>
+
+        <button class="branch" data-category="Transport, logistique & commerce">
+            <span class="check">✓</span><div class="icon">🚚</div>
+            <h3>Transport, logistique & commerce</h3>
+            <p>Transport, livraison, import-export et opérations commerciales.</p>
+        </button>
+
+        <button class="branch" data-category="Autre besoin / orientation">
+            <span class="check">✓</span><div class="icon">🧭</div>
+            <h3>Autre besoin / orientation</h3>
+            <p>Une demande particulière ou besoin d'aide pour trouver la bonne direction.</p>
+        </button>
+
+    </div>
+
+    <section class="dynamic-form" id="dynamicForm">
+        <div class="selected" id="selectedCategory"></div>
+
+        <div class="tag">02 — Votre parcours</div>
+        <h2 class="title" id="formTitle">Précisons votre besoin</h2>
+        <p class="intro" id="formIntro">Quelques questions pour mieux comprendre votre situation.</p>
+
+
+        <div id="adminPath" style="display:none">
+
+            <div class="field">
+                <label>Quel est le sujet de votre démarche ?</label>
+                <div class="subtype-grid" id="adminSubtypes">
+                    <button type="button" class="subtype" data-subtype="Titre de séjour">🪪 Titre de séjour</button>
+                    <button type="button" class="subtype" data-subtype="Renouvellement / récépissé">🔄 Renouvellement / récépissé</button>
+                    <button type="button" class="subtype" data-subtype="Rendez-vous préfecture">📅 Rendez-vous préfecture</button>
+                    <button type="button" class="subtype" data-subtype="Dossier en attente">📂 Dossier en attente</button>
+                    <button type="button" class="subtype" data-subtype="Blocage administratif">⚠️ Blocage administratif</button>
+                    <button type="button" class="subtype" data-subtype="Courrier / décision reçu">✉️ Courrier / décision reçu</button>
+                    <button type="button" class="subtype" data-subtype="Autre administration">🏛️ Autre administration</button>
+                    <button type="button" class="subtype" data-subtype="Autre situation">❓ Autre situation</button>
+                </div>
             </div>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
+
+            <div class="two">
+                <div class="field">
+                    <label for="department">Département concerné</label>
+                    <input id="department" placeholder="Ex. : Seine-Saint-Denis (93)">
+                </div>
+                <div class="field">
+                    <label for="adminDate">Date de début de la démarche (si connue)</label>
+                    <input id="adminDate" type="date">
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="adminStatus">Où en est votre démarche actuellement ?</label>
+                <select id="adminStatus">
+                    <option value="">Choisir une situation</option>
+                    <option>Démarche non commencée</option>
+                    <option>Dossier préparé, pas encore déposé</option>
+                    <option>Dossier déposé</option>
+                    <option>En attente de réponse</option>
+                    <option>Demande de documents complémentaires</option>
+                    <option>Rendez-vous obtenu</option>
+                    <option>Rendez-vous impossible à obtenir</option>
+                    <option>Décision ou réponse reçue</option>
+            <option>Situation bloquée</option>
+                <option>Autre situation</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="adminResponse">Avez-vous reçu un courrier, une réponse ou une notification ?</label>
+                <select id="adminResponse">
+                    <option value="">Choisir une réponse</option>
+                    <option>Oui</option>
+                    <option>Non</option>
+                    <option>Je ne sais pas</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="adminProblem">Décrivez précisément votre situation et le blocage éventuel</label>
+                <textarea id="adminProblem" placeholder="Expliquez les démarches réalisées, les réponses reçues, ce qui bloque et les difficultés rencontrées..."></textarea>
+            </div>
+
+            <div class="field">
+                <label for="adminGoal">Qu'attendez-vous de TRAFIC PLUS ?</label>
+                <select id="adminGoal">
+                    <option value="">Choisir votre objectif</option>
+                    <option>Comprendre ma situation</option>
+                    <option>Identifier la prochaine démarche</option>
+                    <option>Être accompagné dans mes démarches</option>
+                    <option>Faire le point sur un dossier bloqué</option>
+                    <option>Obtenir des informations sur un rendez-vous</option>
+            <option>Être orienté vers un service compétent</option>
+                <option>Autre objectif</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <div id="generalPath" style="display:none">
+            <div class="field">
+                <label for="generalTopic">Précisez le sujet de votre demande</label>
+                <input id="generalTopic" placeholder="Ex. : Création d'un site internet, projet commercial...">
+            </div>
+            <div class="field">
+                <label for="generalProblem">Décrivez votre situation ou votre besoin</label>
+                <textarea id="generalProblem" placeholder="Expliquez ce que vous souhaitez faire, le problème rencontré ou votre projet..."></textarea>
+            </div>
+            <div class="field">
+                <label for="generalGoal">Quel est votre objectif ?</label>
+                <textarea id="generalGoal" placeholder="Qu'aimeriez-vous obtenir, résoudre ou mettre en place ?"></textarea>
             </div>
         </div>
 
-        <div class="step-label">01 — Orientation</div>
 
-        <h2 class="panel-title">Dans quel domaine avez-vous besoin d'aide ?</h2>
-
-        <p class="panel-intro">
-            Sélectionnez la catégorie qui se rapproche le plus de votre situation.
-            Si vous hésitez, choisissez « Autre besoin ».
-        </p>
-
-        <div class="branches" id="branches">
-
-            <button class="branch" data-category="Numérique & informatique"
-                data-prompt="Décrivez votre besoin numérique : site internet, ordinateur, logiciel, outil en ligne, problème technique ou autre.">
-                <span class="branch-check">✓</span>
-                <div class="branch-icon">💻</div>
-                <h3>Numérique & informatique</h3>
-                <p>Site internet, outils numériques, assistance informatique et solutions digitales.</p>
-            </button>
-
-            <button class="branch" data-category="Communication & visibilité"
-                data-prompt="Parlez-nous de votre communication : image, logo, publicité, réseaux sociaux, visibilité ou stratégie.">
-                <span class="branch-check">✓</span>
-                <div class="branch-icon">📣</div>
-                <h3>Communication & visibilité</h3>
-                <p>Identité visuelle, publicité, réseaux sociaux et développement de visibilité.</p>
-            </button>
-
-            <button class="branch" data-category="Administration & préfecture"
-                data-prompt="Expliquez votre démarche administrative, le service concerné, les difficultés rencontrées et l'état actuel de votre dossier.">
-                <span class="branch-check">✓</span>
-                <div class="branch-icon">📄</div>
-                <h3>Administration & préfecture</h3>
-                <p>Démarches, dossiers, rendez-vous, demandes et suivi administratif.</p>
-            </button>
-
-            <button class="branch" data-category="Études, bourses & visas"
-                data-prompt="Précisez votre projet d'études, le pays ou l'établissement visé, votre situation actuelle et votre besoin concernant les bourses ou visas.">
-                <span class="branch-check">✓</span>
-                <div class="branch-icon">🎓</div>
-        <h3>Études, bourses & visas</h3>
-        <p>Orientation, projets d'études, bourses, admission et démarches de visa étudiant.</p>
-            </button>
-
-            <button class="branch" data-category="Entreprise & développement"
-                data-prompt="Présentez votre entreprise ou projet : activité, stade de développement, objectif et difficultés ou besoins.">
-                <span class="branch-check">✓</span>
-                <div class="branch-icon">📈</div>
-                <h3>Entreprise & développement</h3>
-                <p>Création, organisation, commerce, stratégie et développement d'activité.</p>
-            </button>
-
-            <button class="branch" data-category="Transport, logistique & commerce"
-                data-prompt="Décrivez votre besoin de transport, livraison, logistique, import-export, achat ou opération commerciale.">
-                <span class="branch-check">✓</span>
-                <div class="branch-icon">🚚</div>
-                <h3>Transport, logistique & commerce</h3>
-                <p>Transport, livraison, import-export, achats et solutions commerciales.</p>
-            </button>
-
-            <button class="branch" data-category="Autre besoin / orientation"
-                data-prompt="Expliquez librement votre besoin, même si vous ne savez pas encore à quel service il correspond.">
-                <span class="branch-check">✓</span>
-                <div class="branch-icon">🧭</div>
-                <h3>Autre besoin / orientation</h3>
-                <p>Vous avez une demande particulière ou vous ne savez pas par où commencer ?</p>
-            </button>
-
+        <div class="form-divider">
+            <h3>03 — Informations complémentaires</h3>
+            <p>Ces informations nous aideront à mieux comprendre votre demande et à vous recontacter.</p>
         </div>
 
-        <section class="form-section" id="diagnosticForm">
-
-            <div class="selected-branch" id="selectedBranch">
-                ✓ Domaine sélectionné
-            </div>
-
-            <div class="step-label">02 — Votre situation</div>
-
-            <h2 class="panel-title">Parlez-nous de votre besoin</h2>
-
-            <p class="panel-intro">
-                Quelques informations suffisent pour nous permettre de mieux comprendre
-                votre demande et de vous orienter.
-            </p>
-
+        <div class="two">
             <div class="field">
-                <label for="situation">Quelle est votre situation actuelle ?</label>
-                <textarea id="situation" placeholder="Décrivez votre situation, le problème rencontré ou ce que vous cherchez à réaliser..." required></textarea>
-                <small>Vous pouvez écrire librement. Il n'est pas nécessaire de maîtriser les termes techniques.</small>
+                <label for="urgency">Niveau de priorité</label>
+                <select id="urgency">
+                    <option value="">Choisir</option>
+                    <option>Situation normale</option>
+                    <option>Démarche à effectuer prochainement</option>
+                    <option>Échéance proche</option>
+                    <option>Urgent</option>
+                </select>
             </div>
-
             <div class="field">
-                <label for="objective">Quel est votre objectif ?</label>
-                <textarea id="objective" placeholder="Qu'aimeriez-vous obtenir, résoudre, améliorer ou mettre en place ?"></textarea>
+                <label for="deadline">Date limite (si applicable)</label>
+                <input type="date" id="deadline">
             </div>
+        </div>
 
-            <div class="two-fields">
-                <div class="field">
-                    <label for="urgency">Votre demande est-elle urgente ?</label>
-                    <select id="urgency">
-                        <option value="Non précisée">Choisir une réponse</option>
-                        <option value="Pas urgente">Pas urgente</option>
-                        <option value="À traiter prochainement">À traiter prochainement</option>
-                        <option value="Urgente">Urgente</option>
-                    </select>
-                </div>
-
-                <div class="field">
-            <label for="name">Votre nom</label>
-            <input type="text" id="name" placeholder="Nom et prénom">
-                </div>
-            </div>
-
-            <div class="two-fields">
-                <div class="field">
-                    <label for="phone">Votre téléphone</label>
-                    <input type="tel" id="phone" placeholder="Votre numéro de téléphone">
-                </div>
-
-                <div class="field">
-                    <label for="email">Votre adresse e-mail</label>
-                    <input type="email" id="email" placeholder="exemple@email.com">
-                </div>
-            </div>
-
+        <div class="two">
             <div class="field">
-                <label for="additional">Informations complémentaires (facultatif)</label>
-                <textarea id="additional" placeholder="Autres informations utiles, contraintes, échéances, etc."></textarea>
+                <label for="name">Nom et prénom</label>
+                <input id="name" autocomplete="name" placeholder="Votre nom">
             </div>
+            <div class="field">
+                <label for="phone">Téléphone</label>
+                <input id="phone" type="tel" autocomplete="tel" placeholder="Votre numéro">
+            </div>
+        </div>
 
+        <div class="field">
+            <label for="email">Adresse e-mail</label>
+            <input id="email" type="email" autocomplete="email" placeholder="Votre e-mail">
+        </div>
+
+        <div class="field">
+            <label for="additional">Informations supplémentaires (facultatif)</label>
+            <textarea id="additional" placeholder="Autres précisions utiles..."></textarea>
+        </div>
+
+        <div class="actions">
+            <button class="btn primary" id="generateBtn" type="button">Préparer mon diagnostic →</button>
+            <button class="btn secondary" id="resetBtn" type="button">Recommencer</button>
+        </div>
+
+        <div class="result" id="result">
+            <h3>Votre diagnostic est prêt</h3>
+            <p>Vérifiez les informations avant de transmettre votre demande.</p>
+            <div class="message" id="resultMessage"></div>
             <div class="actions">
-                <button class="btn btn-primary" id="generateBtn" type="button">
-                    Préparer mon diagnostic →
-                </button>
-
-                <button class="btn btn-secondary" id="resetBtn" type="button">
-                    Recommencer
-                </button>
+                <button class="btn gold" id="whatsappBtn" type="button">Transmettre sur WhatsApp ↗</button>
+                <button class="btn secondary" id="copyBtn" type="button">Copier le diagnostic</button>
             </div>
+        </div>
+    </section>
 
-            <div class="result" id="result">
-                <h3>Votre demande est prête</h3>
-                <p>
-                    Vérifiez les informations ci-dessous. Vous pourrez ensuite
-                    transmettre votre diagnostic à TRAFIC PLUS via WhatsApp.
-                </p>
+</div>
 
-                <div class="result-message" id="resultMessage"></div>
-
-                <div class="actions">
-                    <button class="btn btn-gold" id="whatsappBtn" type="button">
-                        Transmettre sur WhatsApp ↗
-                    </button>
-
-            <button class="btn btn-secondary" id="copyBtn" type="button">
-                Copier mon diagnostic
-            </button>
-                </div>
-            </div>
-
-        </section>
-
-    </div>
-
-    <div class="info-strip">
-        <strong>TRAFIC PLUS</strong> — Chaque situation est différente.<br>
-        Ce formulaire permet de préparer votre demande et ne constitue pas
-        une décision administrative, juridique ou officielle.
-    </div>
+<div class="notice">
+    TRAFIC PLUS — Ce formulaire permet de préparer et orienter votre demande.
+    Il ne constitue pas une décision administrative, juridique ou officielle.
+    Évitez de transmettre des identifiants ou documents sensibles dans ce formulaire.
+</div>
 </main>
 
 <footer class="footer">
-    <strong>TRAFIC PLUS</strong><br><br>
+    <strong>TRAFIC PLUS</strong><br>
     Numérique · Communication · Accompagnement · Développement<br><br>
     <a href="index.html">Retour au site principal</a>
 </footer>
@@ -812,155 +653,205 @@ button {
 document.addEventListener("DOMContentLoaded", function() {
 
     const branches = document.querySelectorAll(".branch");
-    const form = document.getElementById("diagnosticForm");
-    const selectedBranch = document.getElementById("selectedBranch");
+    const dynamicForm = document.getElementById("dynamicForm");
+    const adminPath = document.getElementById("adminPath");
+    const generalPath = document.getElementById("generalPath");
+    const selectedCategory = document.getElementById("selectedCategory");
     const progressFill = document.getElementById("progressFill");
     const progressLabel = document.getElementById("progressLabel");
     const progressPercent = document.getElementById("progressPercent");
 
-    let selectedCategory = "";
-    let selectedPrompt = "";
+    let category = "";
+    let adminSubtype = "";
 
-    function updateProgress(percent, label) {
-        progressFill.style.width = percent + "%";
-        progressPercent.textContent = percent + "%";
+    function progress(value, label) {
+        progressFill.style.width = value + "%";
+        progressPercent.textContent = value + "%";
         progressLabel.textContent = label;
     }
 
     branches.forEach(function(branch) {
         branch.addEventListener("click", function() {
-
-            branches.forEach(function(item) {
-                item.classList.remove("active");
-            });
-
+            branches.forEach(b => b.classList.remove("active"));
             branch.classList.add("active");
 
-            selectedCategory = branch.dataset.category;
-            selectedPrompt = branch.dataset.prompt;
+            category = branch.dataset.category;
+            adminSubtype = "";
 
-            selectedBranch.textContent = "✓ " + selectedCategory;
+            selectedCategory.textContent = "✓ " + category;
 
-            form.classList.add("show");
+            const isAdmin = category === "Administration & préfecture";
+            adminPath.style.display = isAdmin ? "block" : "none";
+            generalPath.style.display = isAdmin ? "none" : "block";
 
-            document.getElementById("situation").placeholder = selectedPrompt;
+            document.getElementById("result").classList.remove("show");
 
-            updateProgress(35, "Étape 2 · Votre situation");
+            dynamicForm.classList.add("show");
+            progress(35, "Étape 2 · Votre situation");
 
-            form.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+            document.getElementById("formTitle").textContent =
+                isAdmin ? "Précisons votre démarche administrative" : "Précisons votre besoin";
+
+            document.getElementById("formIntro").textContent =
+                isAdmin
+                ? "Choisissez le sujet de votre démarche puis renseignez les éléments utiles à votre situation."
+                : "Décrivez votre besoin et votre objectif pour nous permettre de mieux vous orienter.";
+
+            dynamicForm.scrollIntoView({behavior:"smooth",block:"start"});
         });
     });
 
+    document.querySelectorAll(".subtype").forEach(function(button) {
+        button.addEventListener("click", function() {
+            document.querySelectorAll(".subtype").forEach(b => b.classList.remove("active"));
+            button.classList.add("active");
+            adminSubtype = button.dataset.subtype;
+        });
+    });
+
+    function val(id) {
+        const element = document.getElementById(id);
+        return element ? element.value.trim() : "";
+    }
+
     document.getElementById("generateBtn").addEventListener("click", function() {
 
-        const situation = document.getElementById("situation").value.trim();
-
-        if (!selectedCategory) {
-            alert("Veuillez d'abord choisir un domaine.");
+        if (!category) {
+            alert("Veuillez choisir une branche.");
             return;
         }
 
-        if (!situation) {
-            alert("Merci de décrire votre situation avant de continuer.");
-            document.getElementById("situation").focus();
-            return;
-        }
+        let message = "";
 
-        const objective = document.getElementById("objective").value.trim();
-        const urgency = document.getElementById("urgency").value;
-        const name = document.getElementById("name").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const additional = document.getElementById("additional").value.trim();
+        if (category === "Administration & préfecture") {
 
-        let message =
+            if (!adminSubtype) {
+                alert("Veuillez choisir le sujet de votre démarche administrative.");
+                return;
+            }
+
+            if (!val("adminProblem")) {
+                alert("Merci de décrire votre situation.");
+                document.getElementById("adminProblem").focus();
+                return;
+            }
+
+            message =
 `Bonjour TRAFIC PLUS,
 
-Je souhaite effectuer une demande d'orientation.
+Je souhaite être orienté concernant une démarche administrative.
 
-DOMAINE :
-${selectedCategory}
+DOMAINE : ${category}
+SUJET : ${adminSubtype}
+DÉPARTEMENT : ${val("department") || "Non renseigné"}
+DATE DE DÉBUT : ${val("adminDate") || "Non renseignée"}
+ÉTAT DU DOSSIER : ${val("adminStatus") || "Non renseigné"}
+COURRIER / NOTIFICATION REÇU : ${val("adminResponse") || "Non renseigné"}
 
 MA SITUATION :
-${situation}
+${val("adminProblem")}
 
 MON OBJECTIF :
-${objective || "Non précisé"}
+${val("adminGoal") || "Non précisé"}
 
-URGENCE :
-${urgency}
+PRIORITÉ : ${val("urgency") || "Non précisée"}
+ÉCHÉANCE : ${val("deadline") || "Non renseignée"}
 
-MES COORDONNÉES :
-Nom : ${name || "Non renseigné"}
-Téléphone : ${phone || "Non renseigné"}
-E-mail : ${email || "Non renseigné"}
+NOM : ${val("name") || "Non renseigné"}
+TÉLÉPHONE : ${val("phone") || "Non renseigné"}
+E-MAIL : ${val("email") || "Non renseigné"}
 
 INFORMATIONS COMPLÉMENTAIRES :
-${additional || "Aucune"}
+${val("additional") || "Aucune"}
 
-Merci de m'orienter vers la solution ou le service adapté à ma situation.`;
+Merci de m'aider à identifier les démarches ou solutions adaptées à ma situation.`;
+
+        } else {
+
+            if (!val("generalProblem")) {
+                alert("Merci de décrire votre besoin ou votre situation.");
+                document.getElementById("generalProblem").focus();
+                return;
+            }
+
+            message =
+`Bonjour TRAFIC PLUS,
+
+Je souhaite être orienté pour ma demande.
+
+DOMAINE : ${category}
+SUJET : ${val("generalTopic") || "Non précisé"}
+
+MA SITUATION / MON BESOIN :
+${val("generalProblem")}
+
+MON OBJECTIF :
+${val("generalGoal") || "Non précisé"}
+
+PRIORITÉ : ${val("urgency") || "Non précisée"}
+ÉCHÉANCE : ${val("deadline") || "Non renseignée"}
+
+NOM : ${val("name") || "Non renseigné"}
+TÉLÉPHONE : ${val("phone") || "Non renseigné"}
+E-MAIL : ${val("email") || "Non renseigné"}
+
+INFORMATIONS COMPLÉMENTAIRES :
+${val("additional") || "Aucune"}
+
+Merci de m'orienter vers une solution adaptée.`;
+        }
 
         document.getElementById("resultMessage").textContent = message;
-
         document.getElementById("result").classList.add("show");
-
-        updateProgress(100, "Étape 3 · Diagnostic préparé");
+        progress(100, "Étape 3 · Diagnostic préparé");
 
         document.getElementById("result").scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+            behavior:"smooth",
+            block:"start"
         });
 
         document.getElementById("whatsappBtn").onclick = function() {
-            const whatsappNumber = "33752758690";
-            const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+            const number = "33752758690";
+            const url = "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
             window.open(url, "_blank");
         };
 
         document.getElementById("copyBtn").onclick = async function() {
             try {
                 await navigator.clipboard.writeText(message);
-                alert("Votre diagnostic a été copié.");
-            } catch (error) {
-                alert("La copie automatique n'a pas fonctionné. Sélectionnez le texte pour le copier.");
+                alert("Diagnostic copié.");
+            } catch(e) {
+                alert("Copie indisponible. Sélectionnez et copiez le texte manuellement.");
             }
         };
-
     });
 
     document.getElementById("resetBtn").addEventListener("click", function() {
+        branches.forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".subtype").forEach(b => b.classList.remove("active"));
 
-        branches.forEach(function(item) {
-            item.classList.remove("active");
+        category = "";
+        adminSubtype = "";
+
+        [
+            "department","adminDate","adminStatus","adminResponse","adminProblem",
+            "adminGoal","generalTopic","generalProblem","generalGoal",
+            "urgency","deadline","name","phone","email","additional"
+        ].forEach(function(id) {
+            const element = document.getElementById(id);
+            if(element) element.value = "";
         });
 
-        selectedCategory = "";
-        selectedPrompt = "";
-
-        document.getElementById("situation").value = "";
-        document.getElementById("objective").value = "";
-        document.getElementById("urgency").value = "Non précisée";
-        document.getElementById("name").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("additional").value = "";
-
+        adminPath.style.display = "none";
+        generalPath.style.display = "none";
+        dynamicForm.classList.remove("show");
         document.getElementById("result").classList.remove("show");
-        form.classList.remove("show");
 
-        updateProgress(0, "Étape 1 · Votre domaine");
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        progress(0, "Étape 1 · Votre domaine");
+        window.scrollTo({top:0,behavior:"smooth"});
     });
 
 });
 </script>
-
 </body>
 </html>
