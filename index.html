@@ -1405,6 +1405,188 @@ footer a {
 
 
 
+/* ==============================
+   YONEMA - MENU ET BOX
+================================ */
+
+.yonema-nav-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.yonema-nav-btn {
+    border: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 14px;
+    transition: color 0.3s ease;
+}
+
+.yonema-nav-btn:hover {
+    color: #d99b25;
+}
+
+.yonema-nav-btn span {
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+/* Box */
+
+.yonema-box {
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 50%;
+    width: 340px;
+    background: #ffffff;
+    color: #1e293b;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 12px);
+    transition: all 0.3s ease;
+}
+
+/* Box ouvert */
+
+.yonema-box.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+/* En-tête */
+
+.yonema-box-header {
+    padding: 22px 24px 18px;
+    background: linear-gradient(135deg, #102b46, #174f78);
+    color: white;
+}
+
+.yonema-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.75;
+}
+
+.yonema-box-header h3 {
+    font-size: 25px;
+    margin: 10px 0 4px;
+    font-weight: 800;
+}
+
+.yonema-box-header p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+/* Contenu */
+
+.yonema-box-content {
+    padding: 22px 24px 24px;
+}
+
+.yonema-box-content > p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #526071;
+    margin: 0 0 18px;
+}
+
+/* Activités */
+
+.yonema-activities {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.yonema-activities span {
+    font-size: 13px;
+    color: #253449;
+}
+
+/* Bouton */
+
+.yonema-discover-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    background: #d99b25;
+    color: #ffffff;
+    padding: 13px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.yonema-discover-btn:hover {
+    background: #bd8115;
+    transform: translateY(-2px);
+}
+
+.yonema-discover-btn span {
+    font-size: 18px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .yonema-nav-wrapper {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .yonema-nav-btn {
+        text-align: left;
+        width: 100%;
+    }
+
+    .yonema-box {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        max-width: 340px;
+        margin: 10px auto;
+        transform: translateY(10px);
+        display: none;
+    }
+
+    .yonema-box.active {
+        display: block;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
 
 </head>
@@ -1413,29 +1595,64 @@ footer a {
 
 <body>
     
-    
-
 
 <header class="site-header" id="siteHeader">
 
     <div class="header-container">
 
-       
         <a href="index.html" class="header-logo" aria-label="Accueil Trafic Plus">
             <img src="images/logo.png" alt="Logo Trafic Plus">
         </a>
 
-     
         <nav class="header-nav" id="headerNav">
             <a href="index.html">Accueil</a>
             <a href="#what-we-do">Nos activités</a>
             <a href="#services">Nos services</a>
+
+            <!-- BOX YONEMA -->
+            <div class="yonema-nav-wrapper">
+                <button class="yonema-nav-btn" id="yonemaToggle" type="button" aria-expanded="false">
+                    YONEMA <span>↗</span>
+                </button>
+
+                <div class="yonema-box" id="yonemaBox">
+
+                    <div class="yonema-box-header">
+                        <span class="yonema-label">DÉCOUVREZ AUSSI</span>
+                        <h3>YONEMA 🌍</h3>
+                        <p>Vos envies voyagent</p>
+                    </div>
+
+                    <div class="yonema-box-content">
+                        <p>
+                            Import-export, commandes assistées et transport de colis.
+                            Faites voyager vos envies entre l'Europe et l'Afrique.
+                        </p>
+
+                        <div class="yonema-activities">
+                            <span>📦 Transport de colis</span>
+                            <span>🛍️ Commandes assistées</span>
+                            <span>🌍 Import & export</span>
+                        </div>
+
+                        <a href="https://traficpluspro-source.github.io/Yonema/"
+                           class="yonema-discover-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Découvrir YONEMA
+                            <span>→</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- FIN BOX YONEMA -->
+
             <a href="#why-trafic">Pourquoi nous choisir</a>
             <a href="souhaibou-cisse.html">Le mot du Directeur</a>
             <a href="#contact">Contact</a>
         </nav>
 
-        
         <div class="header-actions">
 
             <a href="diagnostic.html"
@@ -1446,7 +1663,6 @@ footer a {
                 Diagnostic gratuit
             </a>
 
-            
             <button class="menu-toggle"
                     id="menuToggle"
                     type="button"
@@ -1463,6 +1679,8 @@ footer a {
     </div>
 
 </header>
+
+
 
 
 <a href="tel:+33752758690" class="call-fixed">📞 Appeler maintenant</a>
@@ -2290,6 +2508,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const yonemaToggle = document.getElementById("yonemaToggle");
+    const yonemaBox = document.getElementById("yonemaBox");
+
+    if (!yonemaToggle || !yonemaBox) return;
+
+    yonemaToggle.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        const isOpen = yonemaBox.classList.toggle("active");
+
+        yonemaToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    yonemaBox.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+
+    document.addEventListener("click", function () {
+        yonemaBox.classList.remove("active");
+        yonemaToggle.setAttribute("aria-expanded", "false");
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            yonemaBox.classList.remove("active");
+            yonemaToggle.setAttribute("aria-expanded", "false");
+        }
+    });
+
+});
+</script>
+
+
 
 </body>
 </html>
